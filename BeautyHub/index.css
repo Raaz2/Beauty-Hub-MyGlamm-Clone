@@ -1,0 +1,125 @@
+*{
+    margin: 0;
+}
+.pinkPlate{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    background-color:#fee8e8;
+    align-items: center;
+    justify-content: space-around;
+}
+.pinkPlate>div:nth-child(2){
+    cursor: pointer;
+}
+.ppChild{
+    width: 60%;
+    font-size: .85rem;
+    font-weight: 600;
+}
+.ppChild>div>a:hover{
+    cursor: pointer;
+}
+.ppChild>div>a{
+    color: black;
+    text-decoration: none;
+}
+.ppChild>div>span{
+    color:#ff9797;;
+}
+.ppChild>div>span:hover{
+    cursor: pointer;
+}
+.ppChild>div{
+    display: flex;
+    gap: 20px;
+}
+.logoLine{
+    display: flex;
+    width: 100%;
+
+    /* background-color: red ; */
+    align-items: center;
+    justify-content: space-around;
+}
+.llChild{
+    display: flex;
+    /* justify-content: center; */
+    gap: 20px;
+    align-items: center;
+    width: 60%;
+    /* background-color:blue; */
+    /* height: 100%; */
+}
+.llChild>img{
+    cursor: pointer;
+}
+.search{
+    width: 60%;
+    padding: 12px;
+    margin: 13px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.icons{
+    display: flex;
+}
+.icons:hover{
+    cursor: pointer;
+}
+nav{
+    padding: 10px;
+}
+#nav{
+    height: 144px;
+    border: 1px solid whitesmoke;
+}
+nav>ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    justify-content: center;
+    width: 85%;
+}
+nav>ul>li>a{
+    text-decoration: none;
+    color: black;
+    padding: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1px;
+    border-bottom: 10px;
+    /* border: 5px solid red; */
+}
+nav>ul>li>a:hover{
+    text-decoration: underline violet;
+}
+.gif{
+    cursor: pointer;
+}
+#carousel{
+    margin-top: 20px;
+    cursor: pointer;
+}
+#carousel>img{
+    /* position: absolute; */
+    /* height: 420px; */
+}
+.bdslider{
+    margin-top: 40px;
+}
+.bdslider>img{
+    width: 100rem;
+    border: 2px solid red;
+}
+#bdoffer{
+    margin: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+#bdoffer>div>img{
+    width: 300px;
+    height: 209px;
+}
+
