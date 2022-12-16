@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+<body class="signupnext">
+    <div class="border">
+        <!-- 1st div -->
+        <div class="order1">
+            <a href="loginsignup.html">&#10060;</a>
+            <p>VERIFY YOUR MOBILE NUMBER TO COMPLETE YOUR REGISTRATION</p>
+            <p>ENTER OTP SENT ON <span></span></p>
+        </div>
+        <div id="otp">
+            <div><input id="first" type="text"></div>
+            <div><input id="second" type="text"></div>
+            <div><input id="third" type="text"></div>
+            <div><input  id="fourth" type="text"></div>
+        </div>
+        <div class="resend"><span class="material-symbols-outlined">
+            mail
+            </span><span>RESEND OTP</span></div>
+        <!-- 2nd div -->
+        <div  class="number email">
+            <form action="">
+                <input type="text" name="" id="" placeholder="Name">
+                <input type="email" name="" id="" placeholder="Email">
+                <input type="submit" id="verify" value="VERIFY">
+            </form>
+        </div>
+       
+    </div>
+</body>
+</html>
+<script>
+    let mob=(localStorage.getItem("mobile"))||[]
+    document.querySelector("span").textContent="+91 " + mob
+
+   
+    // console.log(otp)
+    document.querySelector("#verify").addEventListener("click",verify)
+    function verify(event){
+        event.preventDefault()
+        let otp=document.querySelector("#first").value+document.querySelector("#second").value+document.querySelector("#third").value+document.querySelector("#fourth").value
+       if(otp=="1234"){
+        alert("Correct OTP")
+        window.location.href="index.html"
+       }else{
+        alert("Incorrect")
+       }
+    }
+</script>

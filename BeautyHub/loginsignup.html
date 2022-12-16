@@ -6,140 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .border {
-            background-color: rgba(253,253,253);
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-            margin: auto;
-            width: 500px;
-            height: 580px;
-            /* border: 2px solid red; */
-        }
-
-
-        .order {
-            text-align: center;
-            border: 2px solid whitesmoke;
-        }
-
-        .order>p {
-            font-size: 14px;
-        }
-
-        #mobile {
-            margin-top: 25px;
-            height: 25px;
-            margin-left: 40px;
-            justify-content: center;
-            width: fit-content;
-            border-bottom: 3px solid black;
-
-        }
-
-        #mobile>a {
-            font-weight: 600;
-            text-decoration: none;
-            color: black;
-            /* text-decoration: underline black; */
-        }
-
-        .number {
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .number input {
-            margin: 20px;
-        }
-
-        .number>form>input:nth-child(1) {
-            padding: 15px;
-            font-weight: 600;
-            width: 70px;
-            height: 25px;
-            border: 2px solid gainsboro;
-        }
-
-        .number>form>input:nth-child(2) {
-            padding: 15px;
-            width: 230px;
-            height: 25px;
-            border: 2px solid gainsboro;
-        }
-
-        .number>form>input:nth-child(3) {
-            background-color: gray;
-            color: white;
-            font-weight: bolder;
-            width: 420px;
-            height: 48px;
-            border-radius: 5px;
-            border: 1px solid gray;
-        }
-
-        .third {
-            display: flex;
-            justify-content: space-evenly;
-        }
-
-        .third>button {
-            padding: 10px;
-            color: black;
-            width: 200px;
-            height: 45px;
-            font-weight: 600;
-            background-color: white;
-        }
-
-        .third>button:hover {
-            cursor: pointer;
-        }
-
-        .terms {
-            text-align: center;
-        }
-
-        .terms a {
-            text-decoration: none;
-            color: black;
-            font-weight: bolder;
-        }
-
-        .terms a:hover {
-            cursor: pointer;
-        }
-
-        .terms>p {
-            color: rgba(51, 51, 51);
-        }
-
-        .continue {
-            /* width:; */
-            text-align: center;
-            margin: 20px 0;
-            border-bottom: 2px solid gray;
-            font-weight: bold;
-            font-size: 0.7rem;
-        }
-
-        .order>a {
-            text-decoration: none;
-            color: gray;
-            display: flex;
-            justify-content: right;
-            padding-right: 11px;
-            filter: grayscale();
-        }
-    </style>
+    <link rel="stylesheet" href="index.css">
 </head>
 
-<body>
+<body class="loginpage">
     <div class="border">
         <!-- 1st div -->
         <div class="order">
-            <a href="">&#10060;</a>
+            <a href="index.html">&#10060;</a>
             <p>Get 15% Good Points back on every order</p>
             <img src="./Beautyhub.png" alt="">
             <div id="mobile"><a href="">*Mobile Number</a></div>
@@ -149,8 +23,8 @@
         <div class="number">
             <form action="">
                 <input type="text" name="" id="" placeholder="+91">
-                <input type="text" name="" id="" placeholder="Mobile">
-                <input type="submit" value="SIGN IN">
+                <input type="tel" name="" id="mob" placeholder="Mobile">
+                <input type="submit" id="signin" value="SIGN IN">
             </form>
         </div>
         <div class="continue">or continue with</div>
@@ -170,6 +44,4 @@
 </body>
 
 </html>
-<script>
-   
-</script>
+<script src="index.js"></script>

@@ -65,6 +65,10 @@
 .icons{
     display: flex;
 }
+.icons a{
+    color: black;
+    text-decoration: none;
+}
 .icons:hover{
     cursor: pointer;
 }
@@ -239,9 +243,19 @@ footer li{
     height: 60px;
     background-color: black;
 }
-/* login popup */
+/* popup */
+.loginpage,.signupnext{
+
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+body{
+    background-color: white;
+}
 .border {
-    display: none;
+    /* opacity: 0.7;     */
     background-color: rgba(253,253,253);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     margin: auto;
@@ -365,4 +379,50 @@ footer li{
     justify-content: right;
     padding-right: 11px;
     filter: grayscale();
+}
+#otp{
+    display: flex;
+    justify-content: space-evenly;
+}
+#otp input{
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: whitesmoke;
+    height: 40px;
+    width: 40px;
+}
+.resend{
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 20px 10px;
+}
+.order1{
+    margin: 40px 10px;
+    text-align: center;
+    line-height: 2;
+    font-weight: 600;
+    /* border: 2px solid whitesmoke; */
+}
+.order1 p{
+    font-size: 0.8rem ;
+}
+.order1 span{
+    text-decoration: underline;
+}
+
+.order1>a {
+    text-decoration: none;
+    color: gray;
+    display: flex;
+    justify-content: right;
+    padding-right: 11px;
+    filter: grayscale();
+}
+.email>[type="text"]{
+    width: 50%;
 }
