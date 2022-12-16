@@ -9,3 +9,12 @@
     
 // }, 2000);
 
+function popup(){
+    // document.querySelector("body").style.position="absolute"
+    document.querySelector(".border").style.display="block"
+}
+document.querySelector(".order>a").addEventListener("click",fun)
+function fun(event){
+    event.preventDefault()
+    document.querySelector(".border").style.display="none"
+}
