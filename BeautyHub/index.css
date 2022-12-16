@@ -65,6 +65,10 @@
 .icons{
     display: flex;
 }
+.icons a{
+    color: black;
+    text-decoration: none;
+}
 .icons:hover{
     cursor: pointer;
 }
@@ -72,7 +76,7 @@ nav{
     padding: 10px;
 }
 #nav{
-    height: 144px;
+    height: 164px;
     border: 1px solid whitesmoke;
 }
 nav>ul{
@@ -93,10 +97,12 @@ nav>ul>li>a{
     /* border: 5px solid red; */
 }
 nav>ul>li>a:hover{
+    color: black;
     text-decoration: underline violet;
 }
 .gif{
     cursor: pointer;
+    margin-top: 20px;
 }
 #carousel{
     margin-top: 20px;
@@ -111,12 +117,19 @@ nav>ul>li>a:hover{
 }
 .bdslider>img{
     width: 100rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 #bdoffer{
-    margin: 30px;
+    width: 100%;
+    height: 20rem;
+
+    background-color: whitesmoke;
+    /* margin: 30px; */
     display: flex;
     justify-content: space-evenly;
+}
+#bdoffer>div{
+    margin: auto;
 }
 #bdoffer>div>img{
     width: 300px;
@@ -124,9 +137,11 @@ nav>ul>li>a:hover{
 }
 #bdoffer>div>h3{
     text-align: center;
+    font-size: medium;
 }
 #bestseller{
     margin-top: 40px;
+    margin-bottom: 30px;
 }
 #bestseller>img{
     width: 100rem;
@@ -146,6 +161,7 @@ nav>ul>li>a:hover{
     transition: transform .2s; /* Animation */
 }
 .bschild>div:hover{
+    /* color: hotpink; */
     cursor: pointer;
     transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
@@ -159,6 +175,7 @@ nav>ul>li>a:hover{
 /* footer  */
 footer{
     width: 100%;
+    height: 50rem;
     /* background: #000; */
     color: black;
 }
@@ -166,7 +183,8 @@ footer>#footer>.ulparent>.footerul>li{
     list-style: none;
 }
 #footer{
-    padding: 10px;
+    /* padding: 10px; */
+    padding: 50px 40px 0px 40px;
     display: flex;
     margin: auto;
     justify-content: center;
@@ -184,4 +202,227 @@ footer li{
 }
 .footerul>li:hover{
     color: hotpink;
+}
+/* iframe{
+    margin-top: 30px;
+} */
+.carousel-inner{
+    margin-top: 20px;
+}
+.beware{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    /* border: 2px solid red; */
+}
+.beware>img{
+    width: 100vw;
+    margin: auto;
+}
+
+.cover{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    /* border: 2px solid red; */
+}
+.cover>img{
+    width: 80%;
+    margin: auto;
+}
+.invite{
+    margin-top: 40px;
+    width: 100%;
+}
+.invite>img{
+    width: 100vw;
+
+}
+.black{
+    width: 100%;
+    height: 60px;
+    background-color: black;
+}
+/* popup */
+.loginpage,.signupnext{
+
+    background-color: aquamarine;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+}
+body{
+    background-color: white;
+}
+.border {
+    /* opacity: 0.7;     */
+    background-color: rgba(253,253,253);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin: auto;
+    width: 500px;
+    height: 580px;
+    /* border: 2px solid red; */
+}
+
+
+.order {
+    text-align: center;
+    border: 2px solid whitesmoke;
+}
+
+.order>p {
+    font-size: 14px;
+}
+
+#mobile {
+    margin-top: 25px;
+    height: 25px;
+    margin-left: 40px;
+    justify-content: center;
+    width: fit-content;
+    border-bottom: 3px solid black;
+
+}
+
+#mobile>a {
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    /* text-decoration: underline black; */
+}
+
+.number {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.number input {
+    margin: 20px;
+}
+
+.number>form>input:nth-child(1) {
+    padding: 15px;
+    font-weight: 600;
+    width: 70px;
+    height: 25px;
+    border: 2px solid gainsboro;
+}
+
+.number>form>input:nth-child(2) {
+    padding: 15px;
+    width: 230px;
+    height: 25px;
+    border: 2px solid gainsboro;
+}
+
+.number>form>input:nth-child(3) {
+    background-color: gray;
+    color: white;
+    font-weight: bolder;
+    width: 420px;
+    height: 48px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+.third {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.third>button {
+    padding: 10px;
+    color: black;
+    width: 200px;
+    height: 45px;
+    font-weight: 600;
+    background-color: white;
+}
+
+.third>button:hover {
+    cursor: pointer;
+}
+
+.terms {
+    text-align: center;
+}
+
+.terms a {
+    text-decoration: none;
+    color: black;
+    font-weight: bolder;
+}
+
+.terms a:hover {
+    cursor: pointer;
+}
+
+.terms>p {
+    color: rgba(51, 51, 51);
+}
+
+.continue {
+    /* width:; */
+    text-align: center;
+    margin: 20px 0;
+    border-bottom: 2px solid gray;
+    font-weight: bold;
+    font-size: 0.7rem;
+}
+
+.order>a {
+    text-decoration: none;
+    color: gray;
+    display: flex;
+    justify-content: right;
+    padding-right: 11px;
+    filter: grayscale();
+}
+#otp{
+    display: flex;
+    justify-content: space-evenly;
+}
+#otp input{
+    text-align: center;
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 10px;
+    background-color: whitesmoke;
+    height: 40px;
+    width: 40px;
+}
+.resend{
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 20px 10px;
+}
+.order1{
+    margin: 40px 10px;
+    text-align: center;
+    line-height: 2;
+    font-weight: 600;
+    /* border: 2px solid whitesmoke; */
+}
+.order1 p{
+    font-size: 0.8rem ;
+}
+.order1 span{
+    text-decoration: underline;
+}
+
+.order1>a {
+    text-decoration: none;
+    color: gray;
+    display: flex;
+    justify-content: right;
+    padding-right: 11px;
+    filter: grayscale();
+}
+.email>[type="text"]{
+    width: 50%;
 }
