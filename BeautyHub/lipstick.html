@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap" rel="stylesheet">
+    <style>
+        #cont {
+            /* with grid */
+            /* place-items: center;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            row-gap: 40px;
+            column-gap: 5px; */
+
+            /* with flex */
+            justify-content: center;
+            place-items: center;
+            width: 100%;
+            display: flex;
+            row-gap: 40px;
+            column-gap: 60px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        #cont>div {
+            font-family: 'Heebo', sans-serif;
+            width: 320px;
+            height: 500px;
+            padding: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+
+        #cont>div:hover {
+            cursor: pointer;
+        }
+
+        img {
+            height: 255px;
+            width: 255px;
+        }
+
+        .off {
+            text-decoration: line-through;
+            color: gray;
+            font-size: 1.5rem;
+        }
+
+        .mrp {
+            font-size: 1.5rem;
+        }
+
+        .det {
+            color: gray;
+        }
+
+        @media only screen and (min-width: 1021px) and (max-width: 4100px) {
+
+            /* medium screen sizes  */
+            #cont {
+                place-items: center;
+                width: 50%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 40px;
+                column-gap: 5px;
+                margin: auto;
+            }
+        }
+
+        @media only screen and (min-width: 716px) and (max-width: 1020px) {
+
+            /* Small screen sizes  */
+            #cont {
+                place-items: center;
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                row-gap: 40px;
+                column-gap: 5px;
+            }
+        }
+
+        @media only screen and (min-width: 10px) and (max-width: 715px) {
+
+            /* Small screen sizes  */
+            #cont {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cont">
+    </div>
+</body>
+
+</html>
+<script>
+    async function getData() {
+        try {
+            let res = await fetch("https://639da32f1ec9c6657baec411.mockapi.io/cosmetic")
+            let out = await res.json()
+            display(out)
+        } catch (error) {
+            alert(error)
+        }
+    }
+    getData()
+
+    function display(data) {
+        data.forEach((el, ind) => {
+            let div = document.createElement('div')
+
+            let image = document.createElement('img')
+            image.setAttribute("src", el.image)
+
+            let title = document.createElement("h4")
+            title.textContent = el.title
+
+            let details = document.createElement("p")
+            details.setAttribute("class", "det")
+            details.textContent = el.description
+
+            let shade = document.createElement("div")
+            shade.textContent = el.shades
+
+            let price = document.createElement("span")
+            price.setAttribute("class", 'mrp')
+            price.textContent = el.price;
+
+            let nbsp = document.createElement("span")
+            nbsp.innerHTML = "&nbsp &nbsp"
+
+            let discount = document.createElement("span")
+            discount.setAttribute('class', "off")
+            discount.textContent = el.discount
+
+            div.append(image, title, details, shade, price, nbsp, discount)
+            document.querySelector("#cont").append(div)
+        })
+    }
+</script>

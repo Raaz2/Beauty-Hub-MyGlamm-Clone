@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
+
 <body class="signupnext">
     <div class="border">
         <!-- 1st div -->
@@ -20,38 +23,48 @@
             <div><input id="first" type="text"></div>
             <div><input id="second" type="text"></div>
             <div><input id="third" type="text"></div>
-            <div><input  id="fourth" type="text"></div>
+            <div><input id="fourth" type="text"></div>
         </div>
         <div class="resend"><span class="material-symbols-outlined">
-            mail
+                mail
             </span><span>RESEND OTP</span></div>
         <!-- 2nd div -->
-        <div  class="number email">
+        <div class="number email">
             <form action="">
-                <input type="text" name="" id="" placeholder="Name">
-                <input type="email" name="" id="" placeholder="Email">
+                <input type="text" name="" id="name" placeholder="Name" required>
+                <input type="email" name="" id="email" placeholder="Email" required>
                 <input type="submit" id="verify" value="VERIFY">
             </form>
         </div>
-       
+
     </div>
 </body>
+
 </html>
 <script>
-    let mob=(localStorage.getItem("mobile"))||[]
-    document.querySelector("span").textContent="+91 " + mob
+    let mob = (localStorage.getItem("mobile")) || []
+    document.querySelector("span").textContent = "+91 " + mob
 
-   
+    let userArr = JSON.parse(localStorage.getItem("Credentials")) || []
     // console.log(otp)
-    document.querySelector("#verify").addEventListener("click",verify)
-    function verify(event){
+    document.querySelector("#verify").addEventListener("click", verify)
+    function verify(event) {
         event.preventDefault()
-        let otp=document.querySelector("#first").value+document.querySelector("#second").value+document.querySelector("#third").value+document.querySelector("#fourth").value
-       if(otp=="1234"){
-        alert("Correct OTP")
-        window.location.href="index.html"
-       }else{
-        alert("Incorrect")
-       }
+        let otp = document.querySelector("#first").value + document.querySelector("#second").value + document.querySelector("#third").value + document.querySelector("#fourth").value
+        if (otp == "1234") {
+            let name = document.querySelector("#name").value;
+            let email = document.querySelector("#email").value;
+            let mobile = localStorage.getItem("mobile")
+            let user = {
+                name, email, mobile
+            }
+            userArr.push(user)
+            localStorage.setItem("Credentials", JSON.stringify(userArr))
+            alert("You've successfully registered with BeautyHub! 😍")
+            window.location.href = "index.html"
+        } else {
+            alert("Incorrect OTP")
+        }
+
     }
 </script>
