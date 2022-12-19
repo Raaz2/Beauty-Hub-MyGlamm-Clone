@@ -6,18 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-
     <style>
         .btn {
-            padding: 10px;
+            padding: 13px 30px 11px 55px;
             color: white;
             background-color: black;
-            /* margin-left: 100px; */
-            place-items: center;
         }
 
         #cont {
@@ -77,26 +71,17 @@
         .det {
             color: gray;
         }
-
-        #path {
-            color: gray;
+        .total{
+            color: white;
+            font-size: 1.5rem;
+            background-color: black;
             text-align: center;
-            border: 1px solid whitesmoke;
-            padding-top: 10px;
-            height: 30px;
-            place-items: center;
-        }
-
-        #head {
-            border-bottom: 10px solid palevioletred;
-            padding: 20px;
-            font-size: 4rem;
+            line-height: 2;
             margin: 20px;
-            width: fit-content;
-            text-align: center;
-            margin: auto;
         }
-
+        #main{
+            line-height: 2.1rem;
+        }
         @media only screen and (min-width: 1021px) and (max-width: 4100px) {
 
             /* medium screen sizes  */
@@ -202,91 +187,108 @@
             </ul>
         </nav>
     </div>
-    <div id="path">
-        <h4>HOME / MAKEUPLIP / MAKEUP / LIPSTICKS</h4>
+    <div class="total">
+        <h3>You have <span id="items"></span> items in cart.</h3>
+    <h3>Your total cart value is <span id="total"></span>.</h3>
     </div>
-    <h1 id="head">LIPSTICKS</h1>
     <div id="cont">
     </div>
 </body>
 
 </html>
 <script>
+     
     let cartData = JSON.parse(localStorage.getItem("cartItem")) || []
-
-    async function getData() {
-        try {
-            let res = await fetch("https://639da32f1ec9c6657baec411.mockapi.io/cosmetic")
-            let out = await res.json()
-            display(out)
-        } catch (error) {
-            alert(error)
-        }
-    }
-    getData()
-
+    display(cartData)
     function display(data) {
         document.querySelector("#cont").innerHTML = ""
         data.forEach((el, ind) => {
             let div = document.createElement('div')
-
+            div.setAttribute("id",'main')
             let image = document.createElement('img')
-            image.setAttribute("src", el.image)
+            image.setAttribute("src", el[0].image)
 
             let title = document.createElement("h4")
-            title.textContent = el.title
+            title.textContent = el[0].title
 
             let details = document.createElement("p")
             details.setAttribute("class", "det")
-            details.textContent = el.description
+            details.textContent = el[0].description
 
             let shade = document.createElement("div")
-            shade.textContent = el.shades
+            shade.textContent = el[0].shades
 
             let price = document.createElement("span")
             price.setAttribute("class", 'mrp')
-            price.textContent = "₹" + el.price;
+            price.textContent ="₹" + el[0].price;
 
             let nbsp = document.createElement("span")
             nbsp.innerHTML = "&nbsp &nbsp"
 
             let discount = document.createElement("span")
             discount.setAttribute('class', "off")
-            discount.textContent = "₹" + el.discount
+            discount.textContent ="₹" + el[0].discount
+
+
+            br1 = document.createElement("br")
+            // qty decrease button 
+            let dec = document.createElement("button")
+            dec.textContent= "-"
+            dec.addEventListener("click", function () {
+                if (qt.textContent <= 1) {
+                    cartData.splice(ind, 1)
+                    localStorage.setItem("cartItem", JSON.stringify(cartData))
+                } else {
+                    el[1]--
+                    total-=  +el[0].price
+                    document.querySelector("#total").textContent= "₹" +total
+                    qt.textContent--
+                    localStorage.setItem("cartItem",JSON.stringify(cartData))
+
+                }
+            })
+            let qt = document.createElement("span")
+            qt.textContent = el[1]
+            qt.style.padding = "7px 7px"
+            // qt.style.marginLeft = "50px"
+            qt.style.border = "1ps solid black"
+            // qty increase button 
+            let inc = document.createElement('button')
+            inc.textContent = "+"
+            inc.addEventListener("click", function () {
+                el[1]++
+                total += +(el[0].price)
+                document.querySelector("#total").textContent = "₹" + total;
+                qt.textContent++
+                localStorage.setItem("cartItem",JSON.stringify(cartData))
+            })
 
             br = document.createElement("br")
             cart = document.createElement("button")
-            cart.textContent = "ADD TO BAG";
+            cart.textContent = "REMOVE FROM BAG";
             cart.setAttribute("class", "btn")
-            cart.addEventListener("click", function () {
-                let cartData = JSON.parse(localStorage.getItem("cartItem")) || []
-
-
-                let already = false;
-                for (let i = 0; i < cartData.length; i++) {
-                    for(let j=0;j<cartData[i].length;j++){
-                        if (cartData[i][j].id == el.id) {
-                        already = true;
-                        break;
-                    }
-                    }
-                   
-                }
-
-                if (already) {
-                    alert("Item Already in Cart!")
-                } else {
-                    let temp = []
-                    temp.push(el)
-                    temp.push(1)
-                    cartData.push(temp)
-                    localStorage.setItem("cartItem", JSON.stringify(cartData))
-                    alert("This item has been successfully added to Bag ! 😍")
-                }
+            cart.addEventListener("click", () => {
+                deleted(el)
             })
 
-            div.append(image, title, details, shade, price, nbsp, discount, br, cart)
+            div.append(image, title, details, shade, price, nbsp, discount,br1, dec, qt, inc, br, cart)
             document.querySelector("#cont").append(div)
         })
     }
+    function deleted(el) {
+        cartData.splice(el, 1)
+        window.location.reload()
+        localStorage.setItem("cartItem", JSON.stringify(cartData))
+    }
+    if (cartData.length == 0) {
+
+        window.location = "empty.html"
+    } else {
+
+        document.querySelector("#items").textContent = cartData.length;
+    }
+
+    let total = cartData.reduce((acc, el ) => acc + +(el[0].price),0)
+    document.querySelector('#total').textContent = "₹" + total
+
 </script>

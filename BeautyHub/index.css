@@ -1,6 +1,13 @@
 *{
     margin: 0;
 }
+#hoverul{
+    display: none;
+}
+#hoverul:hover{
+    display:block;
+    float: left;
+}
 .pinkPlate{
     display: flex;
     width: 100%;
@@ -116,7 +123,7 @@ nav>ul>li>a:hover{
     margin-top: 40px;
 }
 .bdslider>img{
-    width: 100rem;
+    width: 100%;
     /* border: 2px solid red; */
 }
 #bdoffer{
@@ -144,7 +151,7 @@ nav>ul>li>a:hover{
     margin-bottom: 30px;
 }
 #bestseller>img{
-    width: 100rem;
+    width: 100%;
 }
 .bschild{
     width: 80%;
@@ -425,4 +432,55 @@ body{
 }
 .email>[type="text"]{
     width: 50%;
+}
+#app div:nth-child(1) img {
+    margin-top: 10px;
+    height: 100%;
+    width: 100px;
+}
+
+#app div:nth-child(2) img {
+    height: 100%;
+    width: 100px;
+}
+
+#app {
+    display: flex;
+    align-items: end;
+    justify-content: flex-end;
+}
+
+#parent {
+    width: 80%;
+    /* height: 200px; */
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#submit {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-left: -5px;
+}
+
+.footer>div>input[type="text"] {
+    padding: 10px;
+    width: 262px;
+}
+#parent p{
+font-size: 0.9rem;
+font-weight: 600;
+}
+.social{
+margin-top: 20px;
+display: flex;
+gap: 10px;
+justify-content: center;
+align-items: center;
+}
+.social img{
+width: 34px;
+height: 34px;
 }

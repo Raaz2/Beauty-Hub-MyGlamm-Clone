@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #app div:nth-child(1) img {
+            margin-top: 10px;
+            height: 100%;
+            width: 100px;
+        }
+
+        #app div:nth-child(2) img {
+            height: 100%;
+            width: 100px;
+        }
+
+        #app {
+            display: flex;
+            align-items: end;
+            justify-content: flex-end;
+        }
+
+        #parent {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #submit {
+            background-color: black;
+            color: white;
+            padding: 10px;
+            margin-left: -5px;
+        }
+
+        .footer>div>input[type="text"] {
+            padding: 10px;
+            width: 262px;
+        }
+      #parent p{
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+      .social{
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+      }
+      .social img{
+        width: 34px;
+        height: 34px;
+      }
+    </style>
+</head>
+
+<body>
+    <div id="parent">
+        <div class="footer">
+            <div>
+                <p>SUBSCRIBE FOR MYGLAMM EMAILS</p>
+                <input type="text" placeholder="Please enter valid email ID">
+                <input type="button" name="" id="submit" value="SUBSCRIBE NOW">
+            </div>
+        </div>
+        <div class="social">
+            <p>STAY CONNECTED</p>
+            <img src="https://www.freepnglogos.com/uploads/logo-ig-png/logo-ig-logo-instagram-ini-ada-varias-dan-transparan-33.png" alt="">
+            <img src="https://static.vecteezy.com/system/resources/previews/002/534/045/original/social-media-twitter-logo-blue-isolated-free-vector.jpg" alt="">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="">
+            <img src="https://static.vecteezy.com/system/resources/previews/002/534/045/original/social-media-twitter-logo-blue-isolated-free-vector.jpg" alt="">
+        </div>
+        <div id="app">
+            <div>
+                <p>EXPERIENCE THE MYGLAMM MOBILE APP</p>
+                <img src="https://www.reliancedigital.in/build/client/images/google_play_store.png" alt="">
+                <img src="https://www.reliancedigital.in/build/client/images/ios_app_store_icon.png" alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
