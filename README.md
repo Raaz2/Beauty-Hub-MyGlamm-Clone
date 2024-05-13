@@ -1,3 +1,3 @@
-## Project Code:  null-oatmeal-5458
+<!-- ## Project Code:  null-oatmeal-5458 -->
 
-## This is an e-commerce website for cosmetics and beauty products. Where one can purchase beauty products after registering and login. It provides a very good user experience.
+## BeautyHub is an e-commerce  website for cosmetics and beauty products. Where one can purchase beauty products after registering and login. It provides a very good user experience.
